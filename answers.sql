@@ -1,3 +1,5 @@
+SET SERVEROUTPUT ON;
+
 CREATE OR REPLACE PROCEDURE INSERT_STUDENT (
     p_StudentID     NUMBER,
     p_StudentName   VARCHAR2,
@@ -21,5 +23,9 @@ BEGIN
         p_Gender,
         p_DepartmentID
     );
+
+    COMMIT;
+
+    DBMS_OUTPUT.PUT_LINE('Student record inserted successfully');
 END INSERT_STUDENT;
 /
